@@ -25,6 +25,12 @@ exports.handler = async function (event, context) {
     const playlist = first100.items.concat(second100.items);
 
     return {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'GET, OPTION',
+        'Access-Control-Allow-Credentials': true,
+      },
       statusCode: 200,
       body: JSON.stringify({ data: playlist }),
     };

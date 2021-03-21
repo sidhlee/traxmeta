@@ -19,6 +19,12 @@ exports.handler = async function (event) {
   const artistLastFm = response.data.artist;
 
   return {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Methods': 'GET, OPTION',
+      'Access-Control-Allow-Credentials': true,
+    },
     statusCode: 200,
     // remove circular reference to be able to converted into JSON
     body: JSON.stringify({ data: artistLastFm }),

@@ -34,6 +34,12 @@ exports.handler = async function (event) {
   )[0];
 
   return {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Methods': 'GET, OPTION',
+      'Access-Control-Allow-Credentials': true,
+    },
     statusCode: status_code,
     body: JSON.stringify({ data: lyrics }),
   };

@@ -1,9 +1,13 @@
 const axios = require('axios').default;
 const qs = require('qs');
 
-exports.handler = async function (event) {
-  if (event.httpMethod !== 'GET') return;
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'Access-Control-Allow-Methods': 'GET',
+};
 
+exports.handler = async function (event) {
   const authString = Buffer.from(
     `${process.env.API_SPOTIFY}:${process.env.SECRET_SPOTIFY}`
   ).toString('base64');
@@ -25,6 +29,7 @@ exports.handler = async function (event) {
 
     return {
       statusCode: 200,
+      headers,
       body: JSON.stringify({ data }),
     };
   } catch (err) {

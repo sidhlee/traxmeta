@@ -1,12 +1,11 @@
 const axios = require('axios').default;
 const qs = require('qs');
 
-const headers = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Credentials': true,
-};
-
 exports.handler = async function (event) {
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Credentials': true,
+  };
   const authString = Buffer.from(
     `${process.env.API_SPOTIFY}:${process.env.SECRET_SPOTIFY}`
   ).toString('base64');

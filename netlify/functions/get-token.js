@@ -4,6 +4,8 @@ const qs = require('qs');
 exports.handler = async function (event) {
   const headers = {
     'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTION',
     'Access-Control-Allow-Credentials': true,
   };
   const authString = Buffer.from(
@@ -26,8 +28,8 @@ exports.handler = async function (event) {
     });
 
     return {
-      statusCode: 200,
       headers,
+      statusCode: 200,
       body: JSON.stringify({ data }),
     };
   } catch (err) {

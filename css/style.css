@@ -1081,6 +1081,7 @@ a:hover, a:hover > span > i {
   height: 100%;
   position: relative;
   z-index: -10;
+  background-repeat: repeat;
   /* Meta hero section media queries */
 }
 .meta__hero::after {

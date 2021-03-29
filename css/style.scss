@@ -441,6 +441,7 @@ a {
   position: relative;
   z-index: -10;
   // background-size: cover; // doesn't look good as tiles
+  background-repeat: repeat;
 
   &::after {
     content: '';

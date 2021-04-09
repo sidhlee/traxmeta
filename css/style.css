@@ -1009,11 +1009,17 @@ a:hover, a:hover > span > i {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 350px;
             flex: 1 1 350px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
   .chart .chart-item {
     font-size: 80%;
   }
+  .chart::-webkit-scrollbar {
+    display: none;
+  }
 }
+
 .chart-header {
   background: var(--clr-black);
   padding: 1em;

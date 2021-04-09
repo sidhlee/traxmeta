@@ -382,9 +382,14 @@ a {
     .chart-item {
       font-size: 80%;
     }
-  }
+    // hide that ugly vertical scrollbar in Chrome Windows
+    // (but from MacOS as well. We don't really have an option here...)
 
-  @media (min-width: $wide) {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 

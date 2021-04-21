@@ -29,7 +29,7 @@ $wide: 1600px;
 
 html {
   box-sizing: border-box;
-  font-size: min(4.8vw, 140%);
+  font-size: Min(4.8vw, 140%);
 
   @media (min-width: $desktop) {
     font-size: 120%;
@@ -152,9 +152,15 @@ a {
 
 /*  Components */
 .chart-item {
-  height: auto;
+  display: flex;
+  align-items: center;
   position: relative;
+  height: auto;
+  padding: 3px 0;
+  border-bottom: 1px solid;
+  border-color: var(--border);
   opacity: 0;
+  font-size: var(--fz-sm);
 
   &.slide {
     animation: slide 500ms forwards;
@@ -180,16 +186,6 @@ a {
       opacity: 1;
     }
   }
-
-  // max-height: 4rem;
-  display: flex;
-  align-items: center;
-  font-size: var(--fz-sm);
-  border-bottom: 1px solid;
-  border-color: var(--border);
-  // &.border {
-  //   border-color: var(--border);
-  // }
 
   .chart-item__cover {
     height: 100%;
@@ -616,7 +612,7 @@ a {
     }
     .track-info__cover {
       max-width: 40%;
-      box-shadow: 0px 0px 37px 12px rgb(0, 0, 0, 50%);
+      box-shadow: 0px 0px 37px 12px rgba(0, 0, 0, 50%);
       &::after {
         display: none;
       }
